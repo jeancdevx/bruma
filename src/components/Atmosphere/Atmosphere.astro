@@ -1,14 +1,14 @@
 ---
-import { Picture } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import ResponsiveImage from '@/components/ResponsiveImage';
+import type { ResponsiveImageAsset } from '@/components/ResponsiveImage';
 import Icon from '@/components/Icon';
-interface Props { eyebrow: string; title: string; body: string; detail: string; image: ImageMetadata; alt: string; }
+interface Props { eyebrow: string; title: string; body: string; detail: string; image: ResponsiveImageAsset; alt: string; }
 const { eyebrow, title, body, detail, image, alt } = Astro.props;
 ---
 <section id="ambiente" class="atmosphere-section" aria-labelledby="atmosphere-title" tabindex="-1" data-atmosphere>
   <div class="container atmosphere-grid">
     <figure data-reveal>
-      <div class="atmosphere-photo"><Picture src={image} alt={alt} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[360, 720, 1200]} sizes="(min-width: 1440px) 720px, (min-width: 1024px) 55vw, 100vw" width={1200} quality={80} loading="lazy" /></div>
+      <div class="atmosphere-photo"><ResponsiveImage image={image} alt={alt} sizes="(min-width: 1376px) 743px, (min-width: 1024px) calc(58vw - 55.68px), (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)" /></div>
       <figcaption><span class="caption-line"></span>{detail}</figcaption>
     </figure>
     <div class="atmosphere-copy" data-reveal>
@@ -29,7 +29,6 @@ const { eyebrow, title, body, detail, image, alt } = Astro.props;
   .atmosphere-section { padding-block: 0 96px; }
   .atmosphere-grid { display: grid; gap: 48px; align-items: center; }
   .atmosphere-photo { overflow: hidden; border-radius: 12px; }
-  .atmosphere-photo :global(picture) { display: block; }
   .atmosphere-photo :global(img) { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
   figcaption { display: flex; align-items: center; gap: 12px; margin-top: 16px; font-size: 12px; line-height: 16px; color: var(--muted); }
   .caption-line { width: 24px; height: 1px; background: var(--color-terracotta); flex: none; }
