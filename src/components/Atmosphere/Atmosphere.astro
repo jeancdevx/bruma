@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Icon from '@/components/Icon';
+interface Props { eyebrow: string; title: string; body: string; detail: string; image: ImageMetadata; alt: string; }
+const { eyebrow, title, body, detail, image, alt } = Astro.props;
+---
+<section id="ambiente" class="atmosphere-section" aria-labelledby="atmosphere-title" tabindex="-1" data-atmosphere>
+  <div class="container atmosphere-grid">
+    <figure data-reveal>
+      <div class="atmosphere-photo"><Picture src={image} alt={alt} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[360, 720, 1200]} sizes="(min-width: 1440px) 720px, (min-width: 1024px) 55vw, 100vw" width={1200} quality={80} loading="lazy" /></div>
+      <figcaption><span class="caption-line"></span>{detail}</figcaption>
+    </figure>
+    <div class="atmosphere-copy" data-reveal>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id="atmosphere-title" class="section-title">{title}</h2>
+      <p class="body-copy">{body}</p>
+      <div class="space-detail"><Icon name="bean" size={20} /><span>Un café. Un buen lugar.</span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { observeReveals } from '@/helpers/reveal';
+  document.querySelectorAll<HTMLElement>('[data-atmosphere]').forEach(observeReveals);
+</script>
+
+<style>
+  .atmosphere-section { padding-block: 0 96px; }
+  .atmosphere-grid { display: grid; gap: 48px; align-items: center; }
+  .atmosphere-photo { overflow: hidden; border-radius: 12px; }
+  .atmosphere-photo :global(picture) { display: block; }
+  .atmosphere-photo :global(img) { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+  figcaption { display: flex; align-items: center; gap: 12px; margin-top: 16px; font-size: 12px; line-height: 16px; color: var(--muted); }
+  .caption-line { width: 24px; height: 1px; background: var(--color-terracotta); flex: none; }
+  .eyebrow { color: var(--color-terracotta); margin-bottom: 24px; }
+  .section-title { max-width: 352px; margin-bottom: 24px; }
+  .space-detail { display: flex; align-items: center; gap: 12px; margin-top: 32px; font-size: 12px; line-height: 16px; color: var(--muted); }
+  .space-detail :global(svg) { color: var(--color-terracotta); }
+  @media(min-width: 1024px) { .atmosphere-grid { grid-template-columns: 58% 1fr; gap: 64px; } .atmosphere-copy { padding-bottom: 32px; } }
+</style>
