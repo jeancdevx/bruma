@@ -1,0 +1,23 @@
+---
+import LinkButton from '@/components/LinkButton';
+interface Props { name: string; title: string; action: string; note: string; links: readonly { href: string; label: string }[]; }
+const { name, title, action, note, links } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="closing-row"><h2>{title}</h2><LinkButton href="#inicio" variant="text" direction="up">{action}</LinkButton></div>
+    <div class="footer-row"><p>{name}<span class="footer-dot">·</span><span>{note}</span></p><nav aria-label="Navegación del pie de página">{links.map(link => <a href={link.href}>{link.label}</a>)}</nav></div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--line); padding-block: 48px 24px; }
+  .closing-row { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; padding-bottom: 48px; }
+  h2 { max-width: 640px; font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 36px; letter-spacing: -.04em; }
+  .footer-row { display: flex; flex-direction: column; gap: 24px; border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 12px; line-height: 20px; }
+  .footer-dot { margin-inline: 12px; }
+  .footer-row nav { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-row a { display: flex; align-items: center; min-height: 44px; transition: color 300ms var(--ease-bruma); }
+  .footer-row a:hover { color: var(--color-terracotta); }
+  @media(min-width: 768px) { .closing-row { flex-direction: row; align-items: center; justify-content: space-between; } h2 { font-size: 36px; line-height: 40px; } .footer-row { flex-direction: row; align-items: center; justify-content: space-between; } }
+</style>
