@@ -1,14 +1,13 @@
 ---
-import { getImage } from 'astro:assets';
 import '@/styles/global.css';
 import { brand, scenes } from '@/data/cafe';
+import { socialImage } from '@/data/images';
 import fraunces from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
 import manrope from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
 
 interface Props { title?: string; description?: string; }
 const { title = brand.title, description = brand.description } = Astro.props;
-const social = await getImage({ src: scenes[0].image, width: 1200, format: 'jpg', quality: 80 });
-const socialUrl = Astro.site ? new URL(social.src, Astro.site).href : social.src;
+const socialUrl = Astro.site ? new URL(socialImage, Astro.site).href : socialImage;
 ---
 <!doctype html>
 <html lang="es">
