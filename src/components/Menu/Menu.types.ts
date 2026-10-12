@@ -1,9 +1,9 @@
-import type { ImageMetadata } from 'astro';
+import type { ResponsiveImageAsset } from '@/components/ResponsiveImage';
 
 export interface MenuItem {
   name: string;
   category: string;
   description: string;
-  image: ImageMetadata;
+  image: ResponsiveImageAsset;
   alt: string;
 }

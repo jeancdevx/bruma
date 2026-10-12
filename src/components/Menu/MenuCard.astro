@@ -1,12 +1,12 @@
 ---
-import { Picture } from 'astro:assets';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import type { MenuItem } from './Menu.types';
 interface Props { item: MenuItem; index: number; }
 const { item, index } = Astro.props;
 ---
 <article class="menu-card" data-reveal>
   <div class="product-image">
-    <Picture src={item.image} alt={item.alt} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[360, 720, 1200]} sizes="(min-width: 1440px) 400px, (min-width: 768px) 30vw, 100vw" width={720} quality={80} loading="lazy" />
+    <ResponsiveImage image={item.image} alt={item.alt} sizes="(min-width: 1376px) 406px, (min-width: 768px) calc(33.333vw - 53.333px), calc(100vw - 48px)" />
     <span class="product-number" aria-hidden="true">0{index + 1}</span>
   </div>
   <div class="product-meta"><h3>{item.name}</h3><span>{item.category}</span></div>
@@ -15,7 +15,6 @@ const { item, index } = Astro.props;
 
 <style>
   .product-image { position: relative; border-radius: 12px; overflow: hidden; background: var(--color-cream); }
-  .product-image :global(picture) { display: block; }
   .product-image :global(img) { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 700ms var(--ease-bruma); }
   .menu-card:hover .product-image :global(img) { transform: scale(1.025); }
   .product-number { position: absolute; left: 16px; top: 16px; display: grid; place-items: center; width: 32px; height: 32px; background: var(--color-paper); border-radius: 50%; font-size: 12px; color: var(--muted); }
