@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import SceneCopy from './SceneCopy.astro';
 import Icon from '@/components/Icon';
 import type { StoryScene } from './ScrollStory.types';
@@ -28,7 +28,7 @@ const { scenes } = Astro.props;
         <section id={scene.id} class="story-step" data-story-step data-scene-label={scene.alt} aria-labelledby={`${scene.id}-title`} tabindex="-1">
           <SceneCopy scene={scene} first={index === 0} />
           <figure class="scene-original" data-scene-image>
-            <Picture src={scene.image} alt={scene.alt} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[360, 720, 1200]} sizes="(min-width: 1440px) 720px, (min-width: 1024px) 55vw, (min-width: 768px) 80vw, 100vw" width={1200} quality={80} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
+            <ResponsiveImage image={scene.image} alt={scene.alt} sizes="(min-width: 1376px) 730px, (min-width: 1024px) calc(57vw - 54.72px), (min-width: 768px) calc(85vw - 81.6px), calc(100vw - 48px)" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} />
             <figcaption>{scene.number} <span></span> {scene.label}</figcaption>
           </figure>
         </section>
@@ -60,7 +60,6 @@ const { scenes } = Astro.props;
     .scroll-story[data-enhanced] .story-stage { display: flex; flex-direction: column; grid-column: 2; grid-row: 1; align-self: start; position: sticky; top: var(--header-height); height: calc(100svh - var(--header-height)); min-height: 480px; }
     .visual-frames { flex: 1; position: relative; min-height: 0; }
     .visual-frames :global(.visual-frame) { position: absolute; inset: 0; display: flex; align-items: center; opacity: 0; will-change: transform, opacity; }
-    .visual-frames :global(picture) { display: block; width: 100%; }
     .visual-frames :global(img) { width: 100%; height: auto; border-radius: 8px; mix-blend-mode: darken; }
     .visual-frames :global(figcaption) { display: none; }
     .story-stamp { position: absolute; z-index: 2; right: 0; top: 32px; width: 112px; height: 112px; border: 1px solid #a64b3559; border-radius: 50%; transform: rotate(12deg); color: var(--color-terracotta); background: var(--color-cream); }

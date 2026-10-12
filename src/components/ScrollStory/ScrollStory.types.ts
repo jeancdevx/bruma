@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro';
+import type { ResponsiveImageAsset } from '@/components/ResponsiveImage';
 
 export interface StoryScene {
   id: string;
@@ -8,7 +8,7 @@ export interface StoryScene {
   title: string;
   lines: readonly string[];
   body: string;
-  image: ImageMetadata;
+  image: ResponsiveImageAsset;
   alt: string;
   detail: string;
   action?: { label: string; href: string };

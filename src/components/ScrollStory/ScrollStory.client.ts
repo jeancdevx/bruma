@@ -71,6 +71,16 @@ export function mountScrollStory(root: HTMLElement) {
   };
   const configure = () => {
     enabled = desktop.matches && !reduced.matches;
+    if (enabled) {
+      // The next scenes should be decoded before a crossfade makes them visible.
+      frames.forEach((frame, index) => {
+        const image = frame?.querySelector('img');
+        if (!image) return;
+        image.loading = 'eager';
+        image.fetchPriority = index === 0 ? 'high' : 'low';
+        void image.decode().catch(() => { /* A resize can replace the selected srcset candidate. */ });
+      });
+    }
     root.toggleAttribute('data-enhanced', enabled);
     if (!enabled && pendingFrame !== undefined) {
       window.cancelAnimationFrame(pendingFrame);
