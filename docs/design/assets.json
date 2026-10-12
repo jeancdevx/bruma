@@ -1,0 +1,140 @@
+{
+  "brand": "Bruma Café",
+  "date": "2026-10-12",
+  "source": "Built-in imagegen; original AI-generated concept assets, not photographs of a real business.",
+  "status": "complete-before-frontend-implementation",
+  "stylePreamble": "Isometric architectural clay diorama floating as a small rounded island on a plain solid #F3ECE0 background with a soft contact shadow beneath it. Soft matte ceramic surfaces, rounded handcrafted model shapes, walnut wood, warm natural studio lighting from upper left, soft long shadows, tilt-shift miniature look. Cohesive palette: cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. Highly detailed centered composition, the miniature fills 85% of image width with safe breathing room. High-end editorial architectural model, realistic tactile materials rather than a cartoon. Absolutely no text, letters, numbers, logos, watermark, border or frame. Wide landscape 3:2.",
+  "assets": [
+    {
+      "id": "facade",
+      "file": "facade.png",
+      "kind": "stylized-concept",
+      "aspect": "3:2",
+      "alt": "Diorama de una cafetería con fachada crema, toldo terracota y una pequeña terraza.",
+      "prompt": "Use case: stylized-concept. Asset type: website hero and first story scene. Isometric architectural clay diorama floating as a small rounded island on a plain solid #F3ECE0 background with a soft contact shadow beneath it. Soft matte ceramic surfaces, rounded handcrafted model shapes, walnut wood, warm natural studio lighting from upper left, soft long shadows, tilt-shift miniature look. Cohesive palette: cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. Highly detailed centered composition, the miniature fills 85% of image width with safe breathing room. High-end editorial architectural model, realistic tactile materials rather than a cartoon. Absolutely no text, letters, numbers, logos, watermark, border or frame. Wide landscape 3:2. Subject: a charming single-story neighborhood specialty coffee shop, front and right side visible at a fixed 35 degree isometric angle. Ivory plaster facade, a broad arched glazed front door, tall arched windows, terracotta fabric awning, warm walnut trim, sage potted olive trees, two small round outdoor cafe tables and bentwood chairs. Open roof cutaway reveals the intimate walnut espresso counter behind the facade. Small pale stone sidewalk island. Empty, no people. Background must be uniform cream, no horizon. One image.",
+      "path": "src/assets/images/facade.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2539320,
+      "sha256": "78de69772e90428751ac74b1745efc3f59efd49d8226fab0ebe8cc27dc4bf085",
+      "tool": "built-in imagegen"
+    },
+    {
+      "id": "bar",
+      "file": "bar.png",
+      "kind": "stylized-concept",
+      "aspect": "3:2",
+      "alt": "Diorama de una barra de café con máquina espresso, molino y vajilla de cerámica.",
+      "prompt": "Use case: stylized-concept. Asset type: website second story scene. Isometric architectural clay diorama floating as a small rounded island on a plain solid #F3ECE0 background with a soft contact shadow beneath it. Soft matte ceramic surfaces, rounded handcrafted model shapes, walnut wood, warm natural studio lighting from upper left, soft long shadows, tilt-shift miniature look. Cohesive palette: cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. Highly detailed centered composition, the miniature fills 85% of image width with safe breathing room. High-end editorial architectural model, realistic tactile materials rather than a cartoon. Absolutely no text, letters, numbers, logos, watermark, border or frame. Wide landscape 3:2. Input image role: style and architectural materials reference only. Generate a NEW image, not a collage or copy of the reference building. Subject: a cutaway interior diorama of the coffee shop's espresso bar, seen from the SAME 35 degree isometric angle. A long walnut espresso counter with ribbed wooden front, brushed steel two-group espresso machine, small grinder, neatly arranged cream cups, terracotta tiled floor, cream plaster back wall with arched niche and walnut shelves. Small sage olive tree in clay pot beside the counter. No roof, two low walls; all important objects visible. Empty, no people. Match reference lighting, craft, scale and palette. Background uniform cream, no horizon. One image.",
+      "path": "src/assets/images/bar.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2520684,
+      "sha256": "3ed350a663ead297db4d701e801d19816bf5b2f19a8a71fdedee909eb6def02d",
+      "tool": "built-in imagegen",
+      "reference": "src/assets/images/facade.png (style reference, new scene)"
+    },
+    {
+      "id": "table",
+      "file": "table.png",
+      "kind": "stylized-concept",
+      "aspect": "3:2",
+      "alt": "Diorama de una mesa de madera junto a una ventana, con una taza de café y un croissant.",
+      "prompt": "Use case: stylized-concept. Asset type: website third story scene. Isometric architectural clay diorama floating as a small rounded island on a plain solid #F3ECE0 background with a soft contact shadow beneath it. Soft matte ceramic surfaces, rounded handcrafted model shapes, walnut wood, warm natural studio lighting from upper left, soft long shadows, tilt-shift miniature look. Cohesive palette: cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. Highly detailed centered composition, the miniature fills 85% of image width with safe breathing room. High-end editorial architectural model, realistic tactile materials rather than a cartoon. Absolutely no text, letters, numbers, logos, watermark, border or frame. Wide landscape 3:2. Input image role: style and architectural materials reference only. Generate a NEW image, not a collage or copy of the reference building. Subject: an intimate cutaway cafe corner at the SAME 35 degree isometric angle. One round walnut table and two curved bentwood chairs by a tall arched window in an ivory plaster wall, a cream ceramic flat white cup and matching saucer, small golden croissant on a cream plate, closed unmarked book, soft sunlight across terracotta tile floor, sage olive plant in clay pot. Two low walls, no roof, peaceful spacious miniature. Empty, no people. Match reference lighting, craft, scale and palette. Background uniform cream, no horizon. One image.",
+      "path": "src/assets/images/table.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2286344,
+      "sha256": "6e6b13d83c962a3911c49c325176fd5089978edd1452124c6a178feb76d990cd",
+      "tool": "built-in imagegen",
+      "reference": "src/assets/images/facade.png (style reference, new scene)"
+    },
+    {
+      "id": "flat-white",
+      "file": "flat-white.png",
+      "kind": "photorealistic-natural",
+      "aspect": "1:1",
+      "alt": "Flat white en taza de cerámica crema con un corazón de latte art.",
+      "prompt": "Use case: photorealistic-natural. Asset type: website menu product photograph. High-end natural editorial food photography for a quiet specialty cafe. Warm late-afternoon window light from the left, rich walnut wood, cream ceramic, muted terracotta linen, delicate film grain, authentic tactile surfaces, restrained warm color grade. Palette cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. No lettering, logos, text, watermarks, border or frame. Subject: a perfectly made flat white in a low ivory ceramic cup with elegant heart latte art, matching saucer on walnut tabletop, a little terracotta linen at the edge. Three-quarter close-up, coffee cup the clear focal point fills 65 percent of square image, gentle depth of field. Appetizing and understated. Square 1:1, one image.",
+      "path": "src/assets/images/flat-white.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2340211,
+      "sha256": "c4194da60d36587bdae7eae33cbc7adacd3784de5b831ff36e3c75509cc9dffb",
+      "tool": "built-in imagegen"
+    },
+    {
+      "id": "filter",
+      "file": "filter.png",
+      "kind": "photorealistic-natural",
+      "aspect": "1:1",
+      "alt": "Café filtrado servido en una jarra de vidrio junto a una taza de cerámica.",
+      "prompt": "Use case: photorealistic-natural. Asset type: website menu product photograph. High-end natural editorial food photography for a quiet specialty cafe. Warm late-afternoon window light from the left, rich walnut wood, cream ceramic, muted terracotta linen, delicate film grain, authentic tactile surfaces, restrained warm color grade. Palette cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. No lettering, logos, text, watermarks, border or frame. Subject: freshly brewed amber black filter coffee in a refined clear glass carafe with handle, next to a low cream ceramic cup, a white ribbed ceramic pour-over dripper on walnut tabletop, subtle terracotta linen. Three-quarter close-up, carafe and cup fill 70 percent of square image, gentle depth of field, natural glass reflections. Square 1:1, one image.",
+      "path": "src/assets/images/filter.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2352736,
+      "sha256": "c3d3f503f696a12fea4d3e0bc3a4b2c7cc140bb024e75234522ec428eb91cf0c",
+      "tool": "built-in imagegen"
+    },
+    {
+      "id": "croissant",
+      "file": "croissant.png",
+      "kind": "photorealistic-natural",
+      "aspect": "1:1",
+      "alt": "Croissant de mantequilla sobre un plato de cerámica y una servilleta terracota.",
+      "prompt": "Use case: photorealistic-natural. Asset type: website menu product photograph. High-end natural editorial food photography for a quiet specialty cafe. Warm late-afternoon window light from the left, rich walnut wood, cream ceramic, muted terracotta linen, delicate film grain, authentic tactile surfaces, restrained warm color grade. Palette cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. No lettering, logos, text, watermarks, border or frame. Subject: a single beautifully flaky golden-brown butter croissant on an ivory ceramic plate, delicate pastry crumbs, folded muted terracotta linen on walnut tabletop. Three-quarter close-up, croissant fills 65 percent of square image, crisp visible layers, gentle depth of field. Understated artisanal bakery photography. Square 1:1, one image.",
+      "path": "src/assets/images/croissant.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2607754,
+      "sha256": "737b5b28b77a6548f83c8295c52ec3c692cd9b485c1666a6fda71d6b0847e4f2",
+      "tool": "built-in imagegen"
+    },
+    {
+      "id": "interior",
+      "file": "interior.png",
+      "kind": "photorealistic-natural",
+      "aspect": "3:2",
+      "alt": "Interior conceptual de una cafetería con mesas de madera, ventanas arqueadas y luz cálida.",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide editorial website atmosphere photograph. High-end natural editorial food photography for a quiet specialty cafe. Warm late-afternoon window light from the left, rich walnut wood, cream ceramic, muted terracotta linen, delicate film grain, authentic tactile surfaces, restrained warm color grade. Palette cream #F3ECE0, espresso #2B1B14, terracotta #A64B35, sage #6A7559, paper #FFF9F0. No lettering, logos, text, watermarks, border or frame. Subject: a quiet small specialty coffee shop interior with ivory plaster walls, large arched windows on the left, warm walnut tables and curved bentwood chairs, long ribbed walnut espresso counter at back, terracotta tile floor, muted sage olive plants, cream ceramics. Consistent with the miniature cafe's architecture translated into a realistic interior photograph. Beautiful pools of afternoon sunlight. Wide angle at seated eye level, editorial architectural photography, no people. Landscape 3:2, one image.",
+      "path": "src/assets/images/interior.png",
+      "status": "generated-and-visually-reviewed",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2542298,
+      "sha256": "28bc959a2a7989e5c68a6143bf9f85c26e88d84a6fb97b68a401c62e8ed0a8c4",
+      "tool": "built-in imagegen"
+    }
+  ],
+  "fontSources": [
+    {
+      "family": "Fraunces",
+      "package": "@fontsource-variable/fraunces",
+      "license": "SIL OFL 1.1",
+      "url": "https://fontsource.org/fonts/fraunces"
+    },
+    {
+      "family": "Manrope",
+      "package": "@fontsource-variable/manrope",
+      "license": "SIL OFL 1.1",
+      "url": "https://fontsource.org/fonts/manrope"
+    }
+  ],
+  "iconSource": {
+    "url": "https://github.com/phosphor-icons/core",
+    "license": "MIT",
+    "files": [
+      "arrow-down.svg",
+      "arrow-up.svg",
+      "arrow-up-right.svg",
+      "coffee-bean.svg"
+    ]
+  }
+}
