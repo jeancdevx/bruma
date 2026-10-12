@@ -1,0 +1,34 @@
+---
+import MenuCard from './MenuCard.astro';
+import type { MenuItem } from './Menu.types';
+interface Props { eyebrow: string; title: string; body: string; items: readonly MenuItem[]; }
+const { eyebrow, title, body, items } = Astro.props;
+---
+<section id="carta" class="menu-section" aria-labelledby="menu-title" tabindex="-1" data-menu-section>
+  <div class="container">
+    <div class="menu-heading" data-reveal>
+      <div><p class="eyebrow">{eyebrow}</p><h2 id="menu-title" class="section-title">{title}</h2></div>
+      <p class="body-copy">{body}</p>
+    </div>
+    <div class="menu-grid">{items.map((item, index) => <MenuCard item={item} index={index} />)}</div>
+  </div>
+</section>
+
+<script>
+  import { observeReveals } from '@/helpers/reveal';
+  document.querySelectorAll<HTMLElement>('[data-menu-section]').forEach(observeReveals);
+</script>
+
+<style>
+  .menu-section { padding-block: 80px; background: var(--color-paper); }
+  .menu-heading { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+  .eyebrow { color: var(--color-terracotta); margin-bottom: 24px; }
+  .section-title { max-width: 512px; }
+  .menu-heading > .body-copy { max-width: 320px; }
+  .menu-grid { display: grid; gap: 48px; }
+  @media(min-width: 768px) {
+    .menu-section { padding-block: 96px; }
+    .menu-heading { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 48px; }
+    .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+  }
+</style>
