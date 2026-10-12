@@ -1,0 +1,13 @@
+---
+import type { ResponsiveImageAsset } from './ResponsiveImage.types';
+
+interface Props {
+  image: ResponsiveImageAsset;
+  alt: string;
+  sizes: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+const { image, alt, sizes, loading = 'lazy', fetchpriority = 'auto' } = Astro.props;
+---
+<img src={image.src} srcset={image.srcSet} width={image.width} height={image.height} sizes={sizes} alt={alt} loading={loading} fetchpriority={fetchpriority} decoding="async" />
