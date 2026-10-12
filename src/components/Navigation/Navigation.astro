@@ -1,0 +1,84 @@
+---
+import Icon from '@/components/Icon';
+
+interface Props {
+  name: string;
+  wordmark: string;
+  descriptor: string;
+  links: readonly { label: string; href: string }[];
+}
+const { name, wordmark, descriptor, links } = Astro.props;
+---
+<header class="site-header" data-navigation>
+  <div class="container header-inner">
+    <a class="brand" href="#inicio" aria-label={`${name}, volver al inicio`} data-brand-link>
+      <span class="wordmark">{wordmark}<span class="brand-dot">.</span></span>
+      <span class="brand-description">{descriptor}</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      {links.map((link, index) => <a href={link.href} aria-current={index === 0 ? 'location' : undefined}>{link.label}</a>)}
+    </nav>
+    <span class="header-note"><span></span> Una buena pausa</span>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" data-menu-toggle>
+      <span class="menu-line"></span><span class="menu-line"></span>
+    </button>
+  </div>
+  <dialog id="menu-movil" class="mobile-dialog" aria-label="Navegación móvil" data-menu-dialog>
+    <div class="dialog-header">
+      <span class="wordmark">{wordmark}<span class="brand-dot">.</span></span>
+      <button class="menu-close" type="button" aria-label="Cerrar menú" data-menu-close><span></span><span></span></button>
+    </div>
+    <p class="eyebrow">Tómate un momento</p>
+    <nav aria-label="Secciones de Bruma">
+      {links.map((link, index) => <a href={link.href}><span class="link-index">0{index + 1}</span>{link.label}<Icon name="diagonal" size={24} /></a>)}
+    </nav>
+    <p class="dialog-note">Café de especialidad.<br>Pequeños rituales.</p>
+  </dialog>
+</header>
+
+<script>
+  import { mountNavigation } from './Navigation.client';
+  document.querySelectorAll<HTMLElement>('[data-navigation]').forEach(mountNavigation);
+</script>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 30; background: var(--color-cream); }
+  .header-inner { min-height: var(--header-height); display: flex; align-items: center; justify-content: space-between; gap: 32px; border-bottom: 1px solid var(--line); }
+  .brand { display: flex; align-items: center; gap: 16px; flex: none; }
+  .wordmark { font-family: var(--font-display); font-size: 36px; line-height: 40px; font-weight: 500; letter-spacing: -.06em; }
+  .brand-dot { color: var(--color-terracotta); }
+  .brand-description { max-width: 112px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+  .desktop-nav { display: flex; align-items: center; gap: 32px; }
+  .desktop-nav a { display: flex; align-items: center; min-height: 44px; position: relative; font-size: 14px; font-weight: 500; }
+  .desktop-nav a::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 1px; background: var(--color-terracotta); transform: scaleX(0); transform-origin: left; transition: transform 400ms var(--ease-bruma); }
+  .desktop-nav a:hover::after, .desktop-nav a[aria-current]::after { transform: scaleX(1); }
+  .header-note { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+  .header-note span { width: 8px; height: 8px; background: var(--color-sage); border-radius: 50%; }
+  .menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 50%; width: 48px; height: 48px; padding: 12px; position: relative; }
+  .menu-line { position: absolute; left: 12px; width: 24px; height: 1px; background: var(--color-espresso); transition: transform 500ms var(--ease-bruma); }
+  .menu-line:first-child { transform: translateY(-4px); }
+  .menu-line:last-child { transform: translateY(4px); }
+  .menu-toggle[aria-expanded='true'] .menu-line:first-child { transform: rotate(45deg); }
+  .menu-toggle[aria-expanded='true'] .menu-line:last-child { transform: rotate(-45deg); }
+  .mobile-dialog { width: 100%; max-width: none; height: 100dvh; max-height: none; inset: 0; border: none; margin: 0; padding: 24px 24px max(32px, env(safe-area-inset-bottom)); background: var(--color-cream); color: var(--color-espresso); }
+  .mobile-dialog::backdrop { background: #2b1b1480; }
+  .mobile-dialog[open] { display: flex; flex-direction: column; animation: arrive 500ms var(--ease-bruma); }
+  .dialog-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 80px; }
+  .menu-close { position: relative; width: 48px; height: 48px; background: none; border: 1px solid var(--line); border-radius: 50%; }
+  .menu-close span { position: absolute; left: 12px; width: 24px; height: 1px; background: currentColor; transform: rotate(45deg); }
+  .menu-close span:last-child { transform: rotate(-45deg); }
+  .mobile-dialog nav { display: flex; flex-direction: column; margin-top: 32px; }
+  .mobile-dialog nav a { display: flex; align-items: center; gap: 16px; min-height: 80px; border-bottom: 1px solid var(--line); font-family: var(--font-display); font-size: 30px; line-height: 36px; letter-spacing: -.04em; }
+  .mobile-dialog nav a :global(svg) { margin-left: auto; color: var(--color-terracotta); flex: none; }
+  .link-index { font-family: var(--font-sans); font-size: 12px; color: var(--muted); letter-spacing: 0; }
+  .dialog-note { margin-top: auto; padding-top: 48px; color: var(--muted); font-size: 14px; }
+  @media(max-width: 1023px) { .header-note { display: none; } }
+  @media(max-width: 767px) {
+    .header-inner { flex-wrap: wrap; gap: 0 16px; }
+    .brand-description { display: none; }
+    .desktop-nav { width: 100%; justify-content: space-between; gap: 12px; padding-bottom: 12px; }
+    .desktop-nav a { font-size: 12px; }
+    [data-nav-ready] .desktop-nav { display: none; }
+    [data-nav-ready] .menu-toggle { display: block; }
+  }
+</style>
