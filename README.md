@@ -45,6 +45,17 @@ Las pruebas y capturas requieren un servidor iniciado. Para probar exactamente e
 
 Siete imágenes originales se guardan en `src/assets/images/`. Fueron generadas con imagegen integrado: fachada, barra y mesa en un mismo mundo isométrico; flat white, café filtrado, croissant y ambiente en fotografía editorial. Ninguna imagen representa un negocio real. Las fuentes Fraunces y Manrope se sirven localmente mediante Fontsource. Licencias de fuentes, skills e iconos en `docs/design/licenses/`.
 
+## Imágenes y rendimiento
+
+Las imágenes visibles son archivos WebP estáticos con versiones de 400, 800 y 1200 px. El componente ResponsiveImage selecciona el tamaño mediante srcset y sizes. No se convierten imágenes durante las solicitudes del navegador: se elimina la demora de generar AVIF bajo demanda en desarrollo. Los siete PNG originales se conservan para edición y los nombres de las variantes incorporan un hash para invalidar cachés antiguas.
+
+```sh
+pnpm images:optimize
+pnpm images:measure
+```
+
+El primer comando regenera sólo las fuentes modificadas; pnpm build también lo ejecuta automáticamente. El segundo requiere la vista local iniciada y guarda las mediciones en [image-performance.json](docs/design/image-performance.json). Las siguientes escenas del recorrido se preparan con prioridad baja; las imágenes de carta y ambiente mantienen carga diferida.
+
 ## Skills utilizadas
 
 Instaladas con skill-installer en `~/.codex/skills`, conservando AGENTS.md:
