@@ -136,5 +136,18 @@
       "arrow-up-right.svg",
       "coffee-bean.svg"
     ]
+  },
+  "webRenditions": {
+    "manifest": "src/data/image-assets.json",
+    "directory": "public/images",
+    "generator": "scripts/optimize-images.mjs",
+    "format": "WebP",
+    "widths": [
+      400,
+      800,
+      1200
+    ],
+    "quality": 76,
+    "sourcePolicy": "Original PNGs retained; static renditions served without per-request image conversion."
   }
 }

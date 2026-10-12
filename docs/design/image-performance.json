@@ -1,0 +1,118 @@
+{
+  "context": "Local Chromium, browser HTTP cache disabled, unthrottled loopback network. Not a production/mobile-network SLA.",
+  "baseURL": "http://localhost:4321",
+  "baseline": {
+    "source": "Measured on the original Astro dev server before this change, 1440px viewport, PNG-to-AVIF on demand.",
+    "heroDecodedMs": 4932,
+    "meanImageRequestMs": 7094,
+    "requestDurationsMs": {
+      "facade": 4855,
+      "bar": 4938,
+      "table": 4295,
+      "flatWhite": 5537,
+      "filter": 10097,
+      "croissant": 10554,
+      "interior": 9381
+    }
+  },
+  "optimized": [
+    {
+      "width": 1440,
+      "heroDecodedMs": 191,
+      "meanImageRequestMs": 11,
+      "resources": [
+        {
+          "path": "/images/facade-800-4ab8924cd15b.webp",
+          "durationMs": 32,
+          "ttfbMs": 31,
+          "bytes": 50288
+        },
+        {
+          "path": "/images/bar-800-f04988513112.webp",
+          "durationMs": 4,
+          "ttfbMs": 3,
+          "bytes": 49014
+        },
+        {
+          "path": "/images/table-800-41beffdf72e3.webp",
+          "durationMs": 6,
+          "ttfbMs": 6,
+          "bytes": 37218
+        },
+        {
+          "path": "/images/flat-white-800-54eca2d41ae4.webp",
+          "durationMs": 7,
+          "ttfbMs": 6,
+          "bytes": 60588
+        },
+        {
+          "path": "/images/filter-800-d3d23e32f701.webp",
+          "durationMs": 8,
+          "ttfbMs": 6,
+          "bytes": 71250
+        },
+        {
+          "path": "/images/croissant-800-3f4b67808723.webp",
+          "durationMs": 9,
+          "ttfbMs": 8,
+          "bytes": 81212
+        },
+        {
+          "path": "/images/interior-800-977131faa22d.webp",
+          "durationMs": 9,
+          "ttfbMs": 8,
+          "bytes": 71590
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "heroDecodedMs": 154,
+      "meanImageRequestMs": 8,
+      "resources": [
+        {
+          "path": "/images/facade-400-151644e2fb11.webp",
+          "durationMs": 33,
+          "ttfbMs": 32,
+          "bytes": 15264
+        },
+        {
+          "path": "/images/bar-400-91ea230f1c29.webp",
+          "durationMs": 3,
+          "ttfbMs": 2,
+          "bytes": 14242
+        },
+        {
+          "path": "/images/table-400-b57ee41fda4f.webp",
+          "durationMs": 3,
+          "ttfbMs": 3,
+          "bytes": 11786
+        },
+        {
+          "path": "/images/flat-white-400-95ce6f4f07c5.webp",
+          "durationMs": 5,
+          "ttfbMs": 4,
+          "bytes": 19152
+        },
+        {
+          "path": "/images/filter-400-92d4f333e24e.webp",
+          "durationMs": 5,
+          "ttfbMs": 4,
+          "bytes": 23892
+        },
+        {
+          "path": "/images/croissant-400-fa72645700f4.webp",
+          "durationMs": 5,
+          "ttfbMs": 5,
+          "bytes": 26390
+        },
+        {
+          "path": "/images/interior-400-254ad50ab4b1.webp",
+          "durationMs": 3,
+          "ttfbMs": 2,
+          "bytes": 23344
+        }
+      ]
+    }
+  ]
+}

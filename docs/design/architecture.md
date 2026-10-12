@@ -24,6 +24,8 @@ En móvil, sin JavaScript o con movimiento reducido, el HTML original se muestra
 
 ## Imágenes y publicación futura
 
-Picture de astro:assets genera AVIF, WebP y JPEG con tres anchos. Sólo la imagen inicial tiene prioridad alta. Sharp es dependencia directa para que el build también pueda resolverlo. Se cargan dos WOFF2 latinos locales.
+ResponsiveImage renderiza un img nativo con srcset y tamaños acordes con el layout. Las 21 variantes WebP (400, 800 y 1200 px) se generan por adelantado con Sharp y se sirven directamente desde public/images. No hay conversión mediante /_image al cargar o hacer scroll, tampoco en desarrollo. Los archivos contienen un hash en su nombre para evitar cachés antiguas al cambiar una imagen. Sólo la imagen inicial tiene prioridad alta; las otras dos escenas sticky se precargan con prioridad baja antes del crossfade. La carta y el ambiente mantienen carga diferida. Se cargan dos WOFF2 latinos locales.
+
+pnpm images:optimize conserva los siete PNG originales, convierte únicamente las fuentes modificadas, actualiza src/data/image-assets.json y elimina únicamente variantes antiguas registradas por el generador. pnpm build ejecuta esta preparación antes de Astro; las variantes guardadas en el repositorio también permiten iniciar astro dev --background directamente. La imagen social JPEG se genera en el mismo paso, antes de las solicitudes. pnpm images:measure registra tiempos locales con la caché HTTP del navegador desactivada en docs/design/image-performance.json.
 
 Esta versión es conceptual, local y noindex. La imagen social tiene una ruta local. Para una publicación posterior con datos reales, definir site en astro.config.mjs y actualizar la identidad y los datos en data/cafe.ts; el layout resolverá una URL absoluta para la imagen social. No se configuró hospedaje en esta entrega.
