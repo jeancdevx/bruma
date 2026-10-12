@@ -1,0 +1,40 @@
+---
+import LinkButton from '@/components/LinkButton';
+import Icon from '@/components/Icon';
+import type { StoryScene } from './ScrollStory.types';
+
+interface Props { scene: StoryScene; first: boolean; }
+const { scene, first } = Astro.props;
+const Heading = first ? 'h1' : 'h2';
+---
+<div class:list={['scene-copy', { 'hero-copy': first }]}>
+  <p class="eyebrow">{scene.eyebrow}</p>
+  <Heading id={`${scene.id}-title`} class="scene-title" aria-label={scene.title}>
+    {scene.lines.map((line, index) => <span class:list={{ 'accent-line': first && index === scene.lines.length - 1 }}>{line}</span>)}
+  </Heading>
+  <p class="body-copy">{scene.body}</p>
+  {scene.action && <div class="scene-action"><LinkButton href={scene.action.href} variant={first ? 'primary' : 'text'} direction={first ? 'down' : 'diagonal'}>{scene.action.label}</LinkButton></div>}
+  <div class="scene-footnote">
+    {first ? <><span class="scroll-symbol"><Icon name="down" size={16} /></span><span>Desliza. Descubre. Disfruta.</span></> : <><span class="scene-number">{scene.number}</span><span>{scene.detail}</span></>}
+  </div>
+</div>
+
+<style>
+  .scene-copy { padding-block: 64px 32px; }
+  .eyebrow { color: var(--color-terracotta); margin-bottom: 24px; }
+  .scene-title { font-family: var(--font-display); font-size: 36px; line-height: 40px; font-weight: 400; letter-spacing: -.055em; margin-bottom: 24px; }
+  .scene-title span { display: block; }
+  .accent-line { color: var(--color-terracotta); }
+  .scene-action { margin-top: 32px; }
+  .scene-footnote { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; line-height: 16px; margin-top: 48px; }
+  .scroll-symbol { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; }
+  .scene-number { color: var(--color-terracotta); }
+  @media(min-width: 768px) { .scene-title { font-size: 48px; line-height: 48px; } }
+  @media(min-width: 1024px) {
+    .scene-copy { padding: 48px 24px 48px 0; }
+    .hero-copy .scene-title { font-size: 72px; line-height: 72px; }
+    .hero-copy .body-copy { max-width: 368px; }
+    .scene-footnote { margin-top: 64px; }
+  }
+  @media(max-width: 374px) { .eyebrow { letter-spacing: .08em; } }
+</style>
