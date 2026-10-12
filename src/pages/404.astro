@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import LinkButton from '@/components/LinkButton';
-import { Picture } from 'astro:assets';
+import ResponsiveImage from '@/components/ResponsiveImage';
 import { scenes } from '@/data/cafe';
 ---
 <BaseLayout title="Bruma Café · Este camino no lleva a una taza">
   <main id="contenido" class="container not-found" tabindex="-1">
     <div><p class="eyebrow">404 · Una pequeña vuelta</p><h1>Este camino no lleva a una taza.</h1><p class="body-copy">Pero tu próxima pausa sigue esperándote en Bruma.</p><LinkButton href="/">Volver a Bruma</LinkButton></div>
-    <Picture src={scenes[0].image} alt={scenes[0].alt} formats={['avif', 'webp']} fallbackFormat="jpg" width={720} quality={80} />
+    <ResponsiveImage image={scenes[0].image} alt={scenes[0].alt} sizes="(min-width: 1376px) 624px, (min-width: 768px) calc(50vw - 64px), calc(100vw - 48px)" loading="eager" />
   </main>
 </BaseLayout>
 <style>
