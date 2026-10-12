@@ -38,6 +38,7 @@ Las pruebas y capturas requieren un servidor iniciado. Para probar exactamente e
 - [Lámina exportada del tablero](docs/design/design-board.png)
 - [Assets, prompts exactos, tamaños y hashes](docs/design/assets.json)
 - [Arquitectura y comportamiento](docs/design/architecture.md)
+- [Resultados de validación](docs/design/validation.md)
 - [Captura de escritorio](docs/presentation/desktop.png)
 - [Captura móvil completa](docs/presentation/mobile-full.png)
 - [Registro de capturas y modos utilizados](docs/presentation/captures.json)
