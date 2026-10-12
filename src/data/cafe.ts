@@ -1,10 +1,5 @@
-import facade from '@/assets/images/facade.png';
-import bar from '@/assets/images/bar.png';
-import table from '@/assets/images/table.png';
-import flatWhite from '@/assets/images/flat-white.png';
-import filter from '@/assets/images/filter.png';
-import croissant from '@/assets/images/croissant.png';
-import interior from '@/assets/images/interior.png';
+import { images } from './images';
+const { facade, bar, table, flatWhite, filter, croissant, interior } = images;
 import type { StoryScene } from '@/components/ScrollStory/ScrollStory.types';
 import type { MenuItem } from '@/components/Menu/Menu.types';
 

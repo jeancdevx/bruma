@@ -1,0 +1,223 @@
+{
+  "options": {
+    "widths": [
+      400,
+      800,
+      1200
+    ],
+    "webp": {
+      "quality": 76,
+      "effort": 5
+    },
+    "jpeg": {
+      "quality": 80,
+      "progressive": true
+    }
+  },
+  "images": {
+    "facade": {
+      "source": "src/assets/images/facade.png",
+      "sourceBytes": 2539320,
+      "sourceSha256": "78de69772e90428751ac74b1745efc3f59efd49d8226fab0ebe8cc27dc4bf085",
+      "variants": [
+        {
+          "url": "/images/facade-400-151644e2fb11.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 14964,
+          "sha256": "151644e2fb11a24b5af237220ad71dae2321886cc38e602d45e15c9ce7eae95c"
+        },
+        {
+          "url": "/images/facade-800-4ab8924cd15b.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 49988,
+          "sha256": "4ab8924cd15b17b5f54e34178eb448cb0a711a06079744d553c5e215e48f41b2"
+        },
+        {
+          "url": "/images/facade-1200-c97a702ea637.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 101470,
+          "sha256": "c97a702ea637e462a53ec5c332acb0655cda0d108d8ea3b8eb4ce748d77e7128"
+        }
+      ]
+    },
+    "bar": {
+      "source": "src/assets/images/bar.png",
+      "sourceBytes": 2520684,
+      "sourceSha256": "3ed350a663ead297db4d701e801d19816bf5b2f19a8a71fdedee909eb6def02d",
+      "variants": [
+        {
+          "url": "/images/bar-400-91ea230f1c29.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 13942,
+          "sha256": "91ea230f1c29c6d63840e5e5924bd2f7c1228e7bb6fa8be78c8656b7451a4f89"
+        },
+        {
+          "url": "/images/bar-800-f04988513112.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 48714,
+          "sha256": "f0498851311224894e6abbe6760b0ddbb42e69a3558889e1a7d3ce019d4b40e1"
+        },
+        {
+          "url": "/images/bar-1200-ff3169d9f01b.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 100308,
+          "sha256": "ff3169d9f01bd46f547a81e2b78898a10a0feaf50d552aaf994a60e88dd40958"
+        }
+      ]
+    },
+    "table": {
+      "source": "src/assets/images/table.png",
+      "sourceBytes": 2286344,
+      "sourceSha256": "6e6b13d83c962a3911c49c325176fd5089978edd1452124c6a178feb76d990cd",
+      "variants": [
+        {
+          "url": "/images/table-400-b57ee41fda4f.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 11486,
+          "sha256": "b57ee41fda4fff3a32c266c0658d14ecaf99b0d1869e7d423605fe958724b428"
+        },
+        {
+          "url": "/images/table-800-41beffdf72e3.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 36918,
+          "sha256": "41beffdf72e3187b0160503075e13f13aaa0f1aa45ab42e2389dbe3a11a9a08a"
+        },
+        {
+          "url": "/images/table-1200-e662a9726fe7.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 73480,
+          "sha256": "e662a9726fe715314f360961e82699b5e64042c35d322aaf6c7a780ee59eaf3b"
+        }
+      ]
+    },
+    "flat-white": {
+      "source": "src/assets/images/flat-white.png",
+      "sourceBytes": 2340211,
+      "sourceSha256": "c4194da60d36587bdae7eae33cbc7adacd3784de5b831ff36e3c75509cc9dffb",
+      "variants": [
+        {
+          "url": "/images/flat-white-400-95ce6f4f07c5.webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 18852,
+          "sha256": "95ce6f4f07c5b9eb5e5d309d23743d6bed92da4595db5972416ef7d85b0f56db"
+        },
+        {
+          "url": "/images/flat-white-800-54eca2d41ae4.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 60288,
+          "sha256": "54eca2d41ae44cd4a93a66b2c191c8c1f802dd4d3379a5138b495f06fc438ee4"
+        },
+        {
+          "url": "/images/flat-white-1200-b9a7e3e65a54.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 111608,
+          "sha256": "b9a7e3e65a54c494bcd9f9b45c5c255cfb9ecfba6e57e729f127152e8c088a29"
+        }
+      ]
+    },
+    "filter": {
+      "source": "src/assets/images/filter.png",
+      "sourceBytes": 2352736,
+      "sourceSha256": "c3d3f503f696a12fea4d3e0bc3a4b2c7cc140bb024e75234522ec428eb91cf0c",
+      "variants": [
+        {
+          "url": "/images/filter-400-92d4f333e24e.webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 23592,
+          "sha256": "92d4f333e24e2dd51a43f626b57522232a8c9a6002f7c6c442f045aa1e8a7a02"
+        },
+        {
+          "url": "/images/filter-800-d3d23e32f701.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 70950,
+          "sha256": "d3d23e32f7010f8f3bbeec87c7683b1908f8fe5e6125aa7f59190643238fcca7"
+        },
+        {
+          "url": "/images/filter-1200-6e4a7dd50ec0.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 125880,
+          "sha256": "6e4a7dd50ec0dbb26772d24a75a9bdaffafdb726a5e8414d4123e1753eeb7c6f"
+        }
+      ]
+    },
+    "croissant": {
+      "source": "src/assets/images/croissant.png",
+      "sourceBytes": 2607754,
+      "sourceSha256": "737b5b28b77a6548f83c8295c52ec3c692cd9b485c1666a6fda71d6b0847e4f2",
+      "variants": [
+        {
+          "url": "/images/croissant-400-fa72645700f4.webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 26090,
+          "sha256": "fa72645700f4c0dcd741cc9d842a37e399b6d1b708d19d0cb985692eb2d73609"
+        },
+        {
+          "url": "/images/croissant-800-3f4b67808723.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 80912,
+          "sha256": "3f4b67808723519a963f7a63c9907519bc1332bc2e820c125d32249ea976efa5"
+        },
+        {
+          "url": "/images/croissant-1200-0fcb4728d5a1.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 146192,
+          "sha256": "0fcb4728d5a147238b9b276807482ab98cbbf54444f19480e297d800a87cff87"
+        }
+      ]
+    },
+    "interior": {
+      "source": "src/assets/images/interior.png",
+      "sourceBytes": 2542298,
+      "sourceSha256": "28bc959a2a7989e5c68a6143bf9f85c26e88d84a6fb97b68a401c62e8ed0a8c4",
+      "variants": [
+        {
+          "url": "/images/interior-400-254ad50ab4b1.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 23044,
+          "sha256": "254ad50ab4b12b144c9f8378bb2f0508ce51d2adea90b2f3dbdc6c619cd6aa48"
+        },
+        {
+          "url": "/images/interior-800-977131faa22d.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 71290,
+          "sha256": "977131faa22dcdc4a33216f1875a630d77cf5c7e64aa9ea98cfe380f7e63ba93"
+        },
+        {
+          "url": "/images/interior-1200-175dc2031b6b.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 129250,
+          "sha256": "175dc2031b6b634d2bf5cd0b525275e2c7caa349f808685ffad711de362ed283"
+        }
+      ]
+    }
+  },
+  "social": {
+    "url": "/images/facade-social-1200-50f814fd6c86.jpg",
+    "width": 1200,
+    "height": 800,
+    "bytes": 152932,
+    "sha256": "50f814fd6c86aa2bb960cf9e2fe5f16d2792168b99d3e108ca3f888f314af27f",
+    "sourceSha256": "78de69772e90428751ac74b1745efc3f59efd49d8226fab0ebe8cc27dc4bf085"
+  }
+}
