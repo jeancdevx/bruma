@@ -1,0 +1,12 @@
+{
+  "baseURL": "http://127.0.0.1:4322",
+  "tool": "Playwright Chromium",
+  "captures": {
+    "desktop.png": "1440×900, normal motion, initial scene",
+    "desktop-bar.png": "1440×900, normal motion, second scene",
+    "desktop-table.png": "1440×900, normal motion, third scene",
+    "desktop-full.png": "1440px, reduced motion to show the complete static storyboard",
+    "mobile.png": "390×844, normal motion, initial view",
+    "mobile-full.png": "390px, normal motion, complete page"
+  }
+}
