@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Navigation from '@/components/Navigation';
+import ScrollStory from '@/components/ScrollStory';
+import Menu from '@/components/Menu';
+import Manifesto from '@/components/Manifesto';
+import Atmosphere from '@/components/Atmosphere';
+import Footer from '@/components/Footer';
+import { brand, navigation, scenes, menu, manifesto, atmosphere, closing } from '@/data/cafe';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <Navigation name={brand.name} wordmark={brand.wordmark} descriptor={brand.descriptor} links={navigation} />
+  <main id="contenido" tabindex="-1">
+    <ScrollStory scenes={scenes} />
+    <Menu {...menu} />
+    <Manifesto {...manifesto} />
+    <Atmosphere {...atmosphere} />
+  </main>
+  <Footer name={brand.name} links={navigation} {...closing} />
+</BaseLayout>
